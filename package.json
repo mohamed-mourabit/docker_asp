@@ -1,0 +1,29 @@
+{
+  "name": "market_place",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "----------------------",
+    "install": "dotnet restore && cd angular && npm i",
+    "f": "cd angular && ng serve --hmr --port 4201",
+    "analyze": "cd angular && ng run pointage:analyze --diffLoading=false",
+    "b": "dotnet watch run",
+    "reverse": "dotnet ef dbcontext scaffold 'data source=DESKTOP-3550K4L\\HARMONY;database=rfid;user id=sa; password=123' Microsoft.EntityFrameworkCore.SqlServer -o Model -c 'MyContext'",
+    "m0": "node ./remove-script.js && dotnet ef migrations add first && dotnet ef database drop -f && dotnet ef database update && dotnet watch run",
+    "m": "node ./remove-script.js && dotnet ef migrations add first && dotnet ef database update && dotnet watch run",
+    "build-prod": "----------------------",
+    "f-p0": "cd angular && ng build --prod --output-path ../wwwroot/a --base-href=/a/ && cd .. && node ./copy.script.js",
+    "f-p": "cd angular && ng build --prod --output-path ../wwwroot",
+    "p": "dotnet publish -r win-x64 -c Release --output ./deploy /p:PublishReadyToRun=true --no-self-contained",
+    "github": "----------------------",
+    "init": "git init && git remote add origin https://github.com/mohamed-mourabit/docker_asp.git && git checkout -b dev",
+    "push": "git add . && git commit -m \"docker file edit\" && git push -u origin dev",
+    "cmt": "git add . && git commit -m \"first commit\"",
+    "git-login": "git config --global user.email",
+    "git": "npm run f-git-cm && npm run b-git-cm",
+    "pull": "git stash -u && git pull",
+    "check-origin": "git remote -v",
+    "deploy": "----------------------",
+    "iis": "dotnet restore && npm run p",
+    "ci": "npm run f-p && npm run push"
+  }
+}
